@@ -1,0 +1,35 @@
+{
+    "title": "Conference detail",
+    "description": "Provides details about conference scheduled",
+    "type": "object",
+    "additionalProperties": true,
+    "properties": {
+      "id": {
+        "type": "integer",
+        "description": "unique id for a conference"
+      },
+      "name": {
+        "type": "string",
+        "description": "name of a conference"
+      },
+      "date": {
+        "type": "string",
+        "description": "date indicating when conference is happening"
+      },
+      "location": {
+        "type": "string",
+        "description": "location where conference is happening"
+      }
+    },
+    "required": ["name", "date", "location"],
+    "path": [
+    {
+        "method": "POST",
+        "url": "/api/conference"
+    },
+    {
+        "method": "GET",
+        "url": "/api/conference"
+    }
+]
+  }
