@@ -13,12 +13,19 @@ This is a sample express REST API application to schedule conferences with topic
 * Install Postman
 * Install Vscode IDE for development
 
-# What Next?
-* Adding user authentication using JWT
-* Auto generating swagger doc from schemas
-
 # How to use?
 * Clone the app
 * Do "npm install"
 * Run "node app.js"
+
+# What it provides?
+* provides simple REST APIs shown in below swagger doc to create conferences, topics, attendee, speakers, self nominate for topic, vote for topic and fetch highest voted topic.
+* You can access the swagger doc by visiting "http://localhost:3000/api-docs"
+![Screenshot (5)](https://user-images.githubusercontent.com/46703346/230791775-8253387f-cd21-4697-ba80-944bf334e022.png)
+
+
+# What Next?
+* Adding user authentication using JWT
+* Auto generating swagger doc from schemas
+* Add some more validations and also response validation based on schema
 
