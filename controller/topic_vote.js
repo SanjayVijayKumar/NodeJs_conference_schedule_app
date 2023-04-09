@@ -61,7 +61,7 @@ async function getHighestVotedTopic(req, res) {
           raw: true,
         });
     
-        if (!highestVotedTopic[0].TopicId) {
+        if (!highestVotedTopic[0]) {
           return res.status(404).json({ message: 'No topics found' });
         }
 

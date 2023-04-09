@@ -33,7 +33,7 @@
     },
     {
         "method": "GET",
-        "url": "/api/conferences"
+        "url": "/api/conference"
     }
 ]
   }

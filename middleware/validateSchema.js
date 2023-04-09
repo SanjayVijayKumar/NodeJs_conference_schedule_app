@@ -24,7 +24,7 @@ function validateSchema(schema) {
         const validate = ajv.compile(schema);
         const valid = validate(req.body);
         if (!valid) {
-            res.send(errorResponse(validate.errors)).status(400).end();
+            res.status(400).json(errorResponse(validate.errors));
         } else {
             next();
         }

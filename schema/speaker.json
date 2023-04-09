@@ -33,7 +33,7 @@
     },
     {
         "method": "GET",
-        "url": "/api/speakers"
+        "url": "/api/speaker"
     }
 ]
   }

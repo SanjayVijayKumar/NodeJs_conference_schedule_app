@@ -26,8 +26,210 @@
     "paths": {
       "/api/conference": {
         "get": {
-          "tags": [],
-          "description": "",
+          "tags": ["conference"],
+          "description": "get all conferences",
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "OK"
+            }
+          }
+        },
+        "post": {
+          "tags": ["conference"],
+          "description": "create a new conference",
+          "parameters": [
+            {
+              "name": "body",
+              "in": "body",
+              "description": "body of conference object to be created",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/Conference"
+              }
+            }
+          ],
+          "responses": {
+            "405": {
+              "description": "Invalid input"
+            },
+            "201": {
+              "description": "Created"
+            }
+          }
+        }
+      },
+      "/api/speaker": {
+        "get": {
+          "tags": ["speaker"],
+          "description": "get all speakers",
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "OK"
+            }
+          }
+        },
+        "post": {
+          "tags": ["speaker"],
+          "description": "Create a speaker",
+          "parameters": [
+            {
+              "name": "body",
+              "in": "body",
+              "description": "body of speaker object to be created",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/Speaker"
+              }
+            }
+          ],
+          "responses": {
+            "405": {
+              "description": "Invalid input"
+            },
+            "201": {
+              "description": "Created"
+            }
+          }
+        }
+      },
+      "/api/attendee": {
+        "get": {
+          "tags": ["attendee"],
+          "description": "get all attendees",
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "OK"
+            }
+          }
+        },
+        "post": {
+          "tags": ["attendee"],
+          "description": "Create an attendee",
+          "parameters": [
+            {
+              "name": "body",
+              "in": "body",
+              "description": "body of attendee object to be created",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/Attendee"
+              }
+            }
+          ],
+          "responses": {
+            "405": {
+              "description": "Invalid input"
+            },
+            "201": {
+              "description": "Created"
+            }
+          }
+        }
+      },
+      "/api/topic": {
+        "get": {
+          "tags": ["topic"],
+          "description": "get all topic",
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "OK"
+            }
+          }
+        },
+        "post": {
+          "tags": ["topic"],
+          "description": "Create a topic",
+          "parameters": [
+            {
+              "name": "body",
+              "in": "body",
+              "description": "body of topic object to be created",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/Topic"
+              }
+            }
+          ],
+          "responses": {
+            "405": {
+              "description": "Invalid input"
+            },
+            "201": {
+              "description": "Created"
+            }
+          }
+        }
+      },
+      "/api/topic_nominations": {
+        "post": {
+          "tags": ["nomination"],
+          "description": "Create a nomination for topic",
+          "parameters": [
+            {
+              "name": "body",
+              "in": "body",
+              "description": "body of nomination to be created",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/TopicNomination"
+              }
+            }
+          ],
+          "responses": {
+            "405": {
+              "description": "Invalid input"
+            },
+            "201": {
+              "description": "Created"
+            }
+          }
+        }
+      },
+      "/api/topic_vote": {
+        "post": {
+          "tags": ["vote"],
+          "description": "Create a vote for topic",
+          "parameters": [
+            {
+              "name": "body",
+              "in": "body",
+              "description": "body of vote to be created",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/TopicVote"
+              }
+            }
+          ],
+          "responses": {
+            "405": {
+              "description": "Invalid input"
+            },
+            "201": {
+              "description": "Created"
+            }
+          }
+        }
+      },
+      "/api/highest_voted_topic": {
+        "get": {
+          "tags": ["highestVoted"],
+          "description": "get highest voted topic",
           "produces": [
             "application/json"
           ],
@@ -38,17 +240,165 @@
             }
           }
         }
-      },
-      "/api/post-conference": {
-        "post": {
-          "tags": [],
-          "description": "",
-          "parameters": [],
-          "responses": {
-            "201": {
-              "description": "Created"
-            }
+      }
+    },
+    "definitions": {
+      "Conference": {
+        "type": "object",
+        "required": [
+          "name",
+          "location",
+          "start_date",
+          "end_date"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "example": "Web development"
+          },
+          "location": {
+            "type": "string",
+            "example": ""
+          },
+          "start_date": {
+            "type": "string",
+            "example": ""
+          },
+          "end_date": {
+            "type": "string",
+            "example": ""
           }
+        },
+        "xml": {
+          "name": "Conference"
+        }
+      },
+      "Speaker": {
+        "type": "object",
+        "required": [
+          "first_name",
+          "last_name",
+          "email"
+        ],
+        "properties": {
+          "first_name": {
+            "type": "string",
+            "example": "firstName"
+          },
+          "last_name": {
+            "type": "string",
+            "example": "lastName"
+          },
+          "email": {
+            "type": "string",
+            "example": ""
+          },
+          "qualification": {
+            "type": "string",
+            "example": ""
+          }
+        },
+        "xml": {
+          "name": "Speaker"
+        }
+      },
+      "Attendee": {
+        "type": "object",
+        "required": [
+          "first_name",
+          "last_name",
+          "email"
+        ],
+        "properties": {
+          "first_name": {
+            "type": "string",
+            "example": "firstName"
+          },
+          "last_name": {
+            "type": "string",
+            "example": "lastName"
+          },
+          "email": {
+            "type": "string",
+            "example": ""
+          },
+          "qualification": {
+            "type": "string",
+            "example": ""
+          }
+        },
+        "xml": {
+          "name": "Attendee"
+        }
+      },
+      "Topic": {
+        "type": "object",
+        "required": [
+          "name",
+          "description",
+          "conferenceId"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "example": "firstName"
+          },
+          "description": {
+            "type": "string",
+            "example": "some description"
+          },
+          "conferenceId": {
+            "type": "integer",
+            "example": 1
+          }
+        },
+        "xml": {
+          "name": "Topic"
+        }
+      },
+      "TopicNomination": {
+        "type": "object",
+        "required": [
+          "topic_Id",
+          "speaker_id"
+        ],
+        "properties": {
+          "topic_Id": {
+            "type": "integer",
+            "example": 1
+          },
+          "speaker_Id": {
+            "type": "integer",
+            "example": 1
+          }
+        },
+        "xml": {
+          "name": "TopicNomination"
+        }
+      },
+      "TopicVote": {
+        "type": "object",
+        "required": [
+          "topicId",
+          "attendeeId",
+          "vote_value"
+        ],
+        "properties": {
+          "topicId": {
+            "type": "integer",
+            "example": 1
+          },
+          "attendeeId": {
+            "type": "integer",
+            "example": 1
+          },
+          "vote_value": {
+            "type": "integer",
+            "example": 1
+          }
+        },
+        "xml": {
+          "name": "TopicVote"
         }
       }
     }
