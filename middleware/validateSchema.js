@@ -7,7 +7,8 @@ function errorResponse(schemaErrors) {
     let errors = schemaErrors.map((error) => {
       return {
         path: error.dataPath,
-        message: error.message
+        message: error.message,
+        additionalProperty: error.params.additionalProperty
       }
     })
     return {

@@ -1,0 +1,39 @@
+{
+    "title": "Attendee detail",
+    "description": "Provides Attendee details",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "id": {
+        "type": "integer",
+        "description": "unique id of a attendee"
+      },
+      "first_name": {
+        "type": "string",
+        "description": "first name of a attendee"
+      },
+      "last_name": {
+        "type": "string",
+        "description": "last name of a attendee"
+      },
+      "email": {
+        "type": "string",
+        "description": "email address of a attendee"
+      },
+      "qualification": {
+        "type": "string",
+        "description": "qualification of a attendee"
+      }
+    },
+    "required": ["first_name", "last_name", "email"],
+    "path": [
+    {
+        "method": "POST",
+        "url": "/api/attendee"
+    },
+    {
+        "method": "GET",
+        "url": "/api/attendees"
+    }
+]
+  }

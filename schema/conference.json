@@ -2,7 +2,7 @@
     "title": "Conference detail",
     "description": "Provides details about conference scheduled",
     "type": "object",
-    "additionalProperties": true,
+    "additionalProperties": false,
     "properties": {
       "id": {
         "type": "integer",
@@ -12,16 +12,20 @@
         "type": "string",
         "description": "name of a conference"
       },
-      "date": {
+      "start_date": {
         "type": "string",
-        "description": "date indicating when conference is happening"
+        "description": "start date of conference"
+      },
+      "end_date": {
+        "type": "string",
+        "description": "end date of conference"
       },
       "location": {
         "type": "string",
         "description": "location where conference is happening"
       }
     },
-    "required": ["name", "date", "location"],
+    "required": ["name", "start_date", "end_date", "location"],
     "path": [
     {
         "method": "POST",
@@ -29,7 +33,7 @@
     },
     {
         "method": "GET",
-        "url": "/api/conference"
+        "url": "/api/conferences"
     }
 ]
   }

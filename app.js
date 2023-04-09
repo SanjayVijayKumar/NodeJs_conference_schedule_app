@@ -4,9 +4,11 @@ const { routes } = require('./route');
 const swaggerUI = require('swagger-ui-express');
 const swaggerJsDoc = require('swagger-jsdoc');
 const swagger = require('./swagger.json');
+const syncModels = require('./models/model_relationship');
 
 const app = express();
 app.use(express.json());
+
 const options = {
     definition: {
       openapi: "3.0.0",
@@ -34,8 +36,11 @@ const options = {
   
   app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swagger));
 
-http.createServer(app).listen(3000, ()=>{
+syncModels().then(() => {
+  console.log('Created database and table');
+  http.createServer(app).listen(3000, ()=>{
     routes(app);
     console.log('server started at 3000');
+});
 });
 

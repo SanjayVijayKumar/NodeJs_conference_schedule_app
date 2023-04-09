@@ -1,0 +1,39 @@
+{
+    "title": "Speaker detail",
+    "description": "Provides Speaker details",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "id": {
+        "type": "integer",
+        "description": "unique id of a speaker"
+      },
+      "first_name": {
+        "type": "string",
+        "description": "first name of a speaker"
+      },
+      "last_name": {
+        "type": "string",
+        "description": "last name of a speaker"
+      },
+      "email": {
+        "type": "string",
+        "description": "email address of a speaker"
+      },
+      "qualification": {
+        "type": "string",
+        "description": "qualification of a speaker"
+      }
+    },
+    "required": ["first_name", "last_name", "email"],
+    "path": [
+    {
+        "method": "POST",
+        "url": "/api/speaker"
+    },
+    {
+        "method": "GET",
+        "url": "/api/speakers"
+    }
+]
+  }

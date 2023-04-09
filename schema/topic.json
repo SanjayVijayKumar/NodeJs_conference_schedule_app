@@ -1,0 +1,35 @@
+{
+    "title": "Topic detail",
+    "description": "Provides Topic details",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "id": {
+        "type": "integer",
+        "description": "unique id of a topic"
+      },
+      "name": {
+        "type": "string",
+        "description": "topic name"
+      },
+      "description": {
+        "type": "string",
+        "description": "description to topic"
+      },
+      "conferenceId": {
+        "type": "integer",
+        "description": "unique id of confernce topic belongs to"
+      }
+    },
+    "required": ["name", "description", "conferenceId"],
+    "path": [
+    {
+        "method": "POST",
+        "url": "/api/topic"
+    },
+    {
+        "method": "GET",
+        "url": "/api/topics"
+    }
+]
+  }

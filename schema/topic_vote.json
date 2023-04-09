@@ -1,0 +1,36 @@
+{
+    "title": "Vote detail",
+    "description": "Provides details about voting to a topic",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "vote_date": {
+        "type": "string",
+        "description": "date of self nomination to topic"
+      },
+      "topicId": {
+        "type": "integer",
+        "description": "unique id of topic to get nominated for"
+      },
+      "attendeeId": {
+        "type": "integer",
+        "description": "unique id of attendee who wants to vote for a topic"
+      },
+      "vote_value": {
+        "type": "integer",
+        "description": "indicates rating for a topic by attendee"
+      }
+    },
+    "required": ["topicId", "attendeeId", "vote_value"],
+    "path": [
+    {
+        "method": "POST",
+        "url": "/api/topic_vote"
+    },
+    {
+        "method": "GET",
+        "url": "/api/highest_voted_topic",
+        "custom_controller": "getHighestVotedTopic"
+    }
+]
+  }

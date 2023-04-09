@@ -1,0 +1,27 @@
+{
+    "title": "Topic Nomination details",
+    "description": "Provides details about topic nominations",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "nomination_date": {
+        "type": "string",
+        "description": "date of self nomination to topic"
+      },
+      "topicId": {
+        "type": "integer",
+        "description": "unique id of topic to nominate for"
+      },
+      "speakerId": {
+        "type": "integer",
+        "description": "unique id of speaker who wants to self nominate for topic"
+      }
+    },
+    "required": ["topicId", "speakerId"],
+    "path": [
+    {
+        "method": "POST",
+        "url": "/api/topic_nominations"
+    }
+]
+  }
