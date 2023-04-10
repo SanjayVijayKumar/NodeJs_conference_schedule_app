@@ -16,7 +16,8 @@ This is a sample express REST API application to schedule conferences with topic
 # How to use?
 * Clone the app
 * Do "npm install"
-* Run "node app.js"
+* Run "npm start"
+* To run integration tests run "npm test"
 
 # What it provides?
 * provides simple REST APIs shown in below swagger doc to create conferences, topics, attendee, speakers, self nominate for topic, vote for topic and fetch highest voted topic.

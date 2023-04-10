@@ -22,6 +22,6 @@ const Conference = sequelize.define('Conference', {
     type: DataTypes.STRING,
     allowNull: true
   }
-});
+}, {freezeTableName: true});
 
 module.exports = Conference;

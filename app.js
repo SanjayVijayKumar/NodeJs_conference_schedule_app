@@ -34,13 +34,15 @@ const options = {
     apis: ["./route.js"],
   };
   
-  app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swagger));
+app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swagger));
+routes(app);
 
 syncModels().then(() => {
   console.log('Created database and table');
   http.createServer(app).listen(3000, ()=>{
-    routes(app);
     console.log('server started at 3000');
 });
 });
+
+module.exports = app
 

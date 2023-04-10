@@ -19,6 +19,6 @@ const Attendee = sequelize.define('Attendee', {
     type: DataTypes.STRING,
     allowNull: true
   }
-});
+}, {freezeTableName: true});
 
 module.exports = Attendee;

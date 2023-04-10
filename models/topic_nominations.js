@@ -6,6 +6,6 @@ const TopicNominations = sequelize.define('TopicNominations', {
     type: DataTypes.DATE,
     allowNull: false
   }
-});
+}, {freezeTableName: true});
 
 module.exports = TopicNominations;

@@ -10,6 +10,6 @@ const Topic = sequelize.define('Topic', {
     type: DataTypes.TEXT,
     allowNull: false
   }
-});
+}, {freezeTableName: true});
 
 module.exports = Topic;

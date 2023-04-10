@@ -19,6 +19,6 @@ const Speaker = sequelize.define('Speaker', {
     type: DataTypes.STRING,
     allowNull: true
   }
-});
+}, {freezeTableName: true});
 
 module.exports = Speaker;

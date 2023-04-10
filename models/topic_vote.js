@@ -1,7 +1,7 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const sequelize = require('../utils/db');
 
-const TopicVote = sequelize.define('TopicVote', {
+const TopicVote = sequelize.define('TopicVotes', {
   vote_date: {
     type: DataTypes.DATE,
     allowNull: false
@@ -14,6 +14,6 @@ const TopicVote = sequelize.define('TopicVote', {
       max: 10
     }
   }
-});
+}, {freezeTableName: true});
 
 module.exports = TopicVote;
