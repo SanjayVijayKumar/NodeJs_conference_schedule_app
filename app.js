@@ -37,6 +37,7 @@ const options = {
 app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swagger));
 routes(app);
 
+//sync this model
 syncModels().then(() => {
   console.log('Created database and table');
   http.createServer(app).listen(3000, ()=>{
